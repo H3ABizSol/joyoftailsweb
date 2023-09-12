@@ -1,0 +1,72 @@
+.order-details-wrapper {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.order-details-wrapper .order-address {
+  box-shadow: 0 0 15px rgb(211, 209, 209);
+  padding: 1rem 0.6rem;
+  font-family: "Lato";
+  margin-top: 1rem;
+}
+
+.order-details-wrapper .order-address .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.order-details-wrapper .order-status img {
+  width: 200px;
+  height: 200px;
+}
+
+.order-details-wrapper .order-address h3 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+.order-details-wrapper .order-address h4 {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+.order-details-wrapper .order-address p {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.order-details-wrapper .order-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem 0;
+  box-shadow: 0 0 15px rgb(218, 217, 215);
+}
+.order-details-wrapper .order-status h4 {
+  font-size: 1.1rem;
+  font-family: "Fredoka";
+}
+.order-details-wrapper .order-status p {
+  font-size: 1.6rem;
+  font-family: "Fredoka";
+  margin: 1.2rem 0;
+}
+.ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: rgb(110, 191, 234);
+  height: 3px;
+  border-radius: 20px;
+  transition: all 1.5s;
+}
+
+@media only screen and (max-width: 768px) {
+  .order-details-wrapper .order-status img {
+    width: 120px;
+    height: 120px;
+  }
+  .order-details-wrapper .order-status {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,50 @@
+.user-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 80%;
+  margin: 2rem auto;
+}
+.user-wrapper .grid-user {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  box-shadow: 0 0 15px rgb(213, 213, 213);
+  padding: 0.8rem 1rem;
+  text-transform: lowercase;
+}
+.user-wrapper .grid-user p {
+  text-transform: lowercase;
+  text-align: center;
+}
+.button {
+  text-align: center;
+}
+
+.btn {
+  background-color: rgb(255, 193, 79);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    margin-top: 1.3rem;
+    color: rgb(74, 185, 74);
+  }
+  .user-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    width: 95%;
+    margin: 2rem auto;
+  }
+  .user-wrapper .grid-user {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0.8rem 1rem;
+  }
+}

@@ -1,0 +1,27 @@
+.review-wrapper {
+}
+.review-wrapper h2 {
+  text-align: center;
+  font-size: 3.2rem;
+  font-family: "Fredoka";
+  letter-spacing: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.review-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: rgb(250, 249, 249);
+  width: 40%;
+  margin: auto;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 5px rgb(227, 225, 225);
+}
+.review-items p {
+  text-transform: capitalize;
+}

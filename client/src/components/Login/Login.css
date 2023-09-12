@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+.login {
+  /* background: url("../../images/login\ image.png"); */
+  height: 100%;
+  width: 48vw;
+  margin-top: 2rem;
+}
+.loginImage {
+  /* position: absolute; */
+  width: 50%;
+  height: 96vh;
+
+  /* max-height: 745px; */
+  left: 0px;
+  top: 22px;
+}
+.LoginMainImage {
+  height: 100%;
+  width: 100%;
+}
+.loginForm {
+  width: 36%;
+}
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 46px; */
+}
+.signupText {
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Poppins'; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  width: 86px;
+  color: #8d8d8d;
+}
+.welcomeText {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 32px;
+  width: 50%;
+  /* identical to box height */
+
+  color: #000000;
+}
+.loginText {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 82px;
+  /* identical to box height */
+  color: #000000;
+  /* margin: auto; */
+  text-align: center;
+}
+.loginWithGoogle {
+  width: 100%;
+  height: 55px;
+  background: #e9f1ff;
+  border-radius: 9px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.loginWithGoogleLink {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+.loginWithGoogleText {
+  display: flex;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4285f4;
+  position: relative;
+  top: -30px;
+}
+.emailPassWrapper {
+  width: 100%;
+  height: 92px;
+  margin-top: 20px;
+}
+.emailCss {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  color: #000000;
+}
+.emailPass {
+  margin-top: 50px;
+}
+.labelTextWrapper {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.InputCss {
+  background: #ffffff;
+  border: 1px solid #4285f4;
+  border-radius: 9px;
+  width: 100%;
+  height: 57px;
+  padding-left: 20px;
+  outline-color: #4285f4;
+  margin-top: 10px;
+}
+.forgetAndRemember {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #4285f4;
+  margin-top: 9px;
+}
+.loginButton {
+  margin-top: 44px;
+  background: #779341;
+  box-shadow: 0px 4px 19px rgba(119, 147, 65, 0.3);
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  /* identical to box height */
+
+  color: #ffffff;
+  width: 70%;
+  height: 54px;
+  margin-left: 5px;
+  border: none;
+}
+.loginButton div {
+  padding: 15px 91px;
+}
+.linkColorNone {
+  text-decoration: none;
+  color: #779341;
+}
+.loginDetails {
+  /* display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; */
+}
+/* .mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.mainWrapper {
+  /* position: absolute; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* gap: 42px; */
+  width: 100vw;
+}
+.forgetPass {
+  color: #4285f4;
+}
+.home-logo {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  letter-spacing: 0.3rem;
+  -webkit-text-stroke: 2px black;
+  color: transparent;
+}
+@media screen and (max-width: 1000px) {
+  .loginImage {
+    display: none;
+  }
+  .mainWrapper {
+    /* display: block; */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+  .loginForm {
+    position: static;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .topWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .InputCss {
+    width: 100%;
+  }
+  .loginWithGoogle {
+    width: 97%;
+  }
+  .emailPass {
+    width: 100%;
+  }
+  .signupText {
+    width: auto;
+  }
+  .welcomeText {
+    width: 100%;
+  }
+  .loginButton div {
+    padding: 15px 55px;
+  }
+}

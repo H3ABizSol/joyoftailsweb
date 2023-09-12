@@ -1,0 +1,70 @@
+.ord-container {
+  padding: 0 1.2rem;
+  width: 98%;
+  margin: 1rem auto;
+}
+.ord-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.grid-ord {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  place-items: center;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 0 25px rgb(214, 213, 213);
+}
+.grid-ord .prod img {
+  width: 40px;
+}
+.grid-ord .status {
+  border: 1px solid rgb(64, 192, 64);
+  padding: 0.8rem 1.5rem;
+}
+
+select {
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.btn-wrapper button {
+  padding: 0.2rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.btn-wrapper button .edit {
+  color: green;
+}
+.btn-wrapper button .delete {
+  color: red;
+}
+.customer-Img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.customer-Img > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@media only screen and (max-width: 914px) {
+  .ord-wrapper {
+    width: 100%;
+  }
+  .grid-ord {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    place-items: start;
+  }
+  .grid-ord-hide {
+    display: none;
+  }
+}

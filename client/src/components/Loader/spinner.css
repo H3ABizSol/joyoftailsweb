@@ -1,0 +1,29 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 85vw;
+}
+
+.spinner {
+  border-bottom: 4px solid rgba(181, 70, 36, 0.895);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .spinner-container {
+    width: 100vw;
+  }
+}

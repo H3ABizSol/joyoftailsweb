@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.69a68bff.css",
+    "main.js": "/static/js/main.df61116f.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/logo.png": "/static/media/logo.958d5f6e6ff51de8a53b.png",
+    "static/media/girl.webp": "/static/media/girl.5cc11cc9822e58dd3a1c.webp",
+    "static/media/dogLogoCropped.jpg": "/static/media/dogLogoCropped.4ae108cb480e55932ec7.jpg",
+    "static/media/error.jpeg": "/static/media/error.b3eda2b56ecb3a1647b7.jpeg",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "main.69a68bff.css.map": "/static/css/main.69a68bff.css.map",
+    "main.df61116f.js.map": "/static/js/main.df61116f.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69a68bff.css",
+    "static/js/main.df61116f.js"
+  ]
+}

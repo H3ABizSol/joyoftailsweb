@@ -1,0 +1,321 @@
+.product-wrapper {
+  display: flex;
+  padding: 2.2rem 2.2rem;
+}
+
+.product-wrapper .filter-section {
+  width: 22%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 20px;
+  left: 0%;
+}
+.product-wrapper .filter-section .filter-show {
+  width: 95%;
+  margin: 0.8rem auto;
+  border-radius: 15px;
+  border: 1px solid rgb(204, 203, 203);
+  height: fit-content;
+  padding: 2rem 1.5rem;
+}
+.product-wrapper .filter-section .show {
+  width: 95%;
+  margin: 2.8rem auto;
+  border-radius: 15px;
+  border: 1px solid rgb(204, 203, 203);
+  height: 100vh;
+  padding: 0 1rem;
+}
+.product-wrapper .filter-section .filter .filter-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.show-icon {
+  display: none;
+}
+
+.product-wrapper .filter-section .filter-show ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.product-wrapper .filter-section .filter-show ul li,
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(54, 52, 52);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+.product-wrapper .filter-section .show ul li,
+p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(54, 52, 52);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+
+.product-wrapper .product-section {
+  width: 80%;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 5rem;
+}
+.product-wrapper .product-section-two {
+  flex: 4;
+}
+
+.products-section .products-items {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 550px;
+  width: 250px;
+}
+
+.products-section .products-items:hover {
+  transform: translateY(-1%);
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.products-section .products-items figure {
+  width: 90%;
+  overflow: hidden;
+  margin: 0.5rem auto;
+  width: 100%;
+  height: 320px;
+  border: 3px solid rgb(238, 233, 233);
+  border-radius: 30px;
+  padding: 1rem 2rem;
+}
+.products-section .products-items figure:hover {
+  background-color: #ffcd39;
+  transition: all 0.2s linear;
+}
+
+.products-section img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+.products-section img:hover {
+  transform: scale(1);
+  transition: all 0.2s linear;
+}
+
+.products-section .products-items h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  width: 100%;
+  height: 16px;
+  /* background-color: red; */
+  overflow: hidden;
+}
+
+.products-section .products-items p {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+.product-section .products-items button {
+  background-color: orange;
+  width: 65%;
+  margin: 2rem auto;
+  border-radius: 50px;
+  outline: none;
+  padding: 0.7rem 0;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.star-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.star-wrapper label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 2.2rem;
+  font-size: 1.4rem;
+}
+
+.pagination {
+  display: flex;
+  gap: 1.4rem;
+}
+.pagination li {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgb(203, 199, 199);
+  text-transform: capitalize;
+}
+
+.pagination .active {
+  background-color: tomato;
+}
+
+.ratings-input {
+  width: 95%;
+  height: 1px;
+}
+/* .number-input {
+  width: 100%;
+  height: 22px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid rgb(198, 193, 193);
+} */
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.price .slide-range {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.price .slide-range span {
+  font-size: 1.5rem;
+}
+.price .slide-range input[type="range"] {
+  width: 75%;
+  background-color: red;
+}
+.price > .btn-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.price > .btn-wrapper > div {
+  display: flex;
+}
+.price > .btn-wrapper > div input {
+  width: 100%;
+}
+
+.btn-wrapper .go-btn {
+  background-color: tomato;
+  border: none;
+  padding: 0.4rem 0.4rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+}
+.inp {
+  margin-left: 10px;
+}
+.top-space {
+  padding: 0.4rem 0;
+}
+@media only screen and (max-width: 1244px) {
+  .product-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .product-wrapper .filter-section {
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    left: 0%;
+  }
+  .product-wrapper .product-section {
+    width: 100%;
+  }
+
+  .product-wrapper .filter-section .filter-show {
+    height: 25px;
+    /* background-color: red; */
+    overflow: hidden;
+  }
+  .show-icon {
+    display: block;
+  }
+  .product-wrapper .filter-section .show {
+    overflow: visible;
+    height: fit-content;
+    padding: 1rem 0.6rem;
+  }
+
+  .product-wrapper .filter-section .show ul li,
+  p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(54, 52, 52);
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0.3rem 0;
+  }
+}
+
+@media only screen and (max-width: 1078px) {
+  .product-wrapper .products-section .products-items figure {
+    width: 250px;
+    height: 340px;
+  }
+  .product-wrapper .products-section .products-items figure img {
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .product-wrapper .product-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0;
+    align-items: center;
+    column-gap: 0;
+  }
+  .product-wrapper .product-section .products-items {
+    width: 100%;
+  }
+  .product-wrapper .product-section h2 {
+    font-size: 0.9rem;
+    height: 10px;
+    text-align: justify;
+    padding: 0 1rem;
+  }
+  .product-wrapper .product-section p {
+    font-size: 0.2rem;
+  }
+  .product-wrapper .product-section button {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+
+  .product-wrapper .products-section .products-items figure {
+    width: 90%;
+    height: 240px;
+    margin-top: 0;
+    padding: 5rem 2rem;
+  }
+  .product-wrapper .products-section .products-items figure img {
+    width: 100%;
+    height: 100%;
+  }
+  .pagination li {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,48 @@
+.mycarousel {
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 8rem 0;
+}
+
+.customer-wrapper {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  justify-content: space-evenly;
+}
+.customer-wrapper .figure {
+  /* width: 250px;
+  height: 250px; */
+  border-radius: 50%;
+}
+
+.customer-wrapper figure img {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+}
+.customer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.customer-content p {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  font-weight: 100;
+}
+.customer-content h3 {
+  font-size: 2.6rem;
+}
+
+@media only screen and (max-width: 868px) {
+  .customer-wrapper {
+    flex-direction: column;
+  }
+  .customer-wrapper figure img {
+    width: 300px;
+    height: 300px;
+  }
+}

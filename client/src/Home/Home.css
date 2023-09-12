@@ -1,0 +1,685 @@
+.category-section {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: rgb(250, 238, 238);
+  /* background-color: #f1f0e9; */
+  padding: 0.2rem 0;
+}
+.category-section ul {
+  display: flex;
+  justify-content: center;
+  gap: 5.5rem;
+  font-family: "Fredoka";
+  padding: 1rem 0;
+}
+.category-section ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.category-section h2 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.category-section ul li .sub-menu {
+  display: none;
+}
+.category-section ul li .sub-menu p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  padding: 0.6rem 0;
+}
+
+.category-section ul li:hover > .sub-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  top: 70%;
+  z-index: 9999;
+  left: 0;
+  background-color: rgb(251, 252, 251);
+  animation: subanim 0.8s forwards;
+}
+
+@keyframes subanim {
+  0% {
+    margin-top: -4rem;
+  }
+  100% {
+    margin-top: 0rem;
+  }
+}
+
+.food-category {
+  width: 95%;
+  margin: 2rem auto;
+}
+.food-category h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 5rem 0;
+  font-family: "Fredoka";
+}
+
+.food-category-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+.category-item {
+  background-color: rgba(241, 164, 151, 0.981);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+  width: 250px;
+}
+.category-item h2 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  margin: 1.2rem 0;
+}
+.category-item figure {
+  width: 90%;
+  margin: auto;
+  height: 190px;
+  padding: 0.6rem 0;
+}
+.category-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.food-brand {
+  margin-top: 14rem;
+}
+.brand-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.food-brand .food-item {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.food-brand .food-item h2 {
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+.food-brand .food-item figure {
+  width: 220px;
+  height: 220px;
+  border: 3px solid rgba(222, 219, 219, 0.858);
+  border-radius: 50%;
+  padding: 0.4rem;
+}
+.food-brand .food-item figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.service-area {
+  background-color: #f49867d8;
+}
+.service-section {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 12rem;
+  padding: 5rem 0;
+}
+.service-section .service-content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  gap: 3rem;
+}
+.service-section .service-content .servicelist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.7rem;
+}
+.service-section h2 {
+  text-align: center;
+  font-size: 3.4rem;
+  font-weight: 800;
+  word-spacing: 0.5rem;
+  font-family: "Fredoka";
+}
+.service-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.service-section p {
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 3.5rem;
+}
+.service-section figure {
+  margin: auto;
+  width: 450px;
+  text-align: center;
+}
+.service-section img {
+  width: 100%;
+}
+.contact-wrappers {
+  display: flex;
+  justify-content: space-between;
+}
+.common-contact {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.common-contact p {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  color: rgb(74, 31, 14);
+}
+.common-contact a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 10rem;
+}
+.icon-wrapper .items {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgb(154, 157, 72);
+  background-image: url("https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.icon-wrapper .cat {
+  background-image: url("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.product {
+  width: 75%;
+  margin: auto;
+  display: grid;
+  gap: 3rem;
+  margin-top: 15rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.product .product-items {
+  font-family: "Readex Pro";
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product .product-items h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  line-height: 2.4rem;
+  height: 25px;
+  overflow: hidden;
+}
+
+.product .product-items:hover > button {
+  transform: translateY(-2%);
+  transition: all 0.2s linear;
+  background-color: #ff9933;
+  color: white;
+}
+
+.product .product-items figure {
+  width: 90%;
+  height: 280px;
+  margin: auto;
+}
+.product .product-items .img-container {
+  height: 380px;
+  width: 95%;
+  border: 2px solid rgb(240, 234, 234);
+  box-shadow: 0px 1px 2px rgb(227, 224, 224);
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+.product .product-items .img-container:hover {
+  transition: all 1.2s linear;
+  background-color: #ffc312;
+}
+
+.product .product-items button {
+  background-color: orange;
+  border-radius: 50px;
+  outline: none;
+  padding: 0.8rem 4rem;
+  border: none;
+  font-size: 1.2rem;
+  font-family: "Readex Pro";
+  font-weight: 700;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.sleeping-dog {
+  width: 100vw;
+  height: 70vh;
+  background-image: url("https://images.unsplash.com/photo-1546444575-95793abb97dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+  background-attachment: fixed;
+}
+
+.our-service h2 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-top: 8rem;
+  text-align: center;
+  font-family: "Fredoka";
+}
+.ourservice-section {
+  width: 65%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4rem;
+  column-gap: 6rem;
+  margin-top: 5rem;
+  padding: 1rem 0;
+}
+.ourservice-section .service-items {
+  width: 100%;
+  padding: 2rem 0;
+  margin: auto;
+  border-radius: 50px;
+  border: 3px solid rgb(240, 236, 236);
+  box-shadow: 0px -2px 2px rgb(232, 230, 228);
+  cursor: pointer;
+}
+.ourservice-section .service-items h2 {
+  font-size: 3.5rem;
+  font-family: "Fredoka";
+  margin-top: 1rem;
+}
+
+.ourservice-section figure {
+  width: 50%;
+  overflow: hidden;
+  border-radius: 25px;
+  border-radius: 15px;
+  border: 1px solid rgb(245, 242, 242);
+  margin: auto;
+  margin-top: 5rem;
+  height: 220px;
+}
+.ourservice-section figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transform: scale(1.2);
+}
+.ourservice-section figure img:hover {
+  transition: all 0.2s linear;
+  transform: scale(1);
+}
+.customer-wrapper {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Fredoka";
+}
+
+.discount {
+  width: 65%;
+  height: 280px;
+  margin: auto;
+  margin-top: 5rem;
+  background-color: #feec1d;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.discount .discount-item {
+  width: 180px;
+  height: 180px;
+  padding: 0 1rem;
+  background-color: #ff6b35;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.4rem;
+  color: white;
+}
+.discount .discount-item h3 span {
+  color: #ffcd08;
+  font-weight: 800;
+}
+.discount h2 {
+  font-size: 5rem;
+  width: 60%;
+  font-weight: 700;
+  line-height: 6rem;
+  letter-spacing: 0.4rem;
+  font-family: "Fredoka";
+}
+.discount button {
+  background-color: #ff6b35;
+  border: none;
+  padding: 1rem 5rem;
+  border-radius: 40px;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: "Carter One";
+  letter-spacing: 0.1rem;
+}
+.discount-content {
+  width: fit-content;
+}
+.anime-cat {
+  animation: anime 0.5s forwards;
+}
+@keyframes anime {
+  0% {
+    margin-top: -4rem;
+  }
+  100% {
+    margin-top: 0rem;
+  }
+}
+.whatsapp {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1170px) {
+  .ourservice-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 1096px) {
+  .service-section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .service-section figure {
+    width: 310px;
+  }
+
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product .product-items {
+    width: 280px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  .dog-product .left {
+    display: none;
+  }
+  .cat-product .left {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .category-section ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    gap: 0.2rem;
+    cursor: pointer;
+  }
+  .category-section h2 {
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+  .category-section ul li .sub-menu p {
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding: 0.6rem 0;
+  }
+
+  .food-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .food-section h2 {
+    font-size: 3rem;
+  }
+  .food-section figure {
+    width: 270px;
+    background: url("https://pettie.wpengine.com/wp-content/uploads/2023/05/Pty-Dog-Image-1-overlay.png");
+    border-radius: 50%;
+    padding: 3rem;
+  }
+  .dog-product .left {
+    display: none;
+  }
+  .cat-product .left {
+    display: none;
+  }
+  .service-section {
+    margin-top: 8rem;
+  }
+  .service-section .service-content .servicelist {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .service-section .service-content h2 {
+    font-size: 2.6rem;
+  }
+  .service-section .service-content p {
+    font-size: 1.5rem;
+  }
+  .service-section .service-content h3 {
+    font-size: 1.6rem;
+  }
+  .contact-wrappers {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .icon-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .icon-wrapper .items {
+    width: 150px;
+    height: 150px;
+  }
+  .product {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin-top: 8rem;
+  }
+  .product .product-items {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .product .product-items figure {
+    width: 100%;
+    height: 120px;
+  }
+  .product .product-items h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .product .product-items button {
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .product .product-items .img-container {
+    height: 220px;
+    width: 95%;
+    border: 2px solid rgb(240, 234, 234);
+    box-shadow: 0px 1px 2px rgb(227, 224, 224);
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ourservice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .our-service .service-items h2 {
+    font-size: 1.3rem;
+    font-family: "'Fredoka";
+  }
+  .our-service .service-items figure {
+    width: 80%;
+    height: 120px;
+    margin-top: 0;
+  }
+
+  .ourservice-section .service-items {
+    width: auto;
+  }
+  .service-section h2 {
+    font-size: 3.5rem;
+  }
+  .discount {
+    width: 95%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+  }
+  .discount h2 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+  .discount .discount-item {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  }
+  .discount .discount-item h3 span {
+    color: #ffcd08;
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .discount button {
+    padding: 0.5rem 2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  .discount-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .our-service h2 {
+    margin-top: 4rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .sleeping-dog {
+    background-size: 100% 100%;
+    height: 280px;
+  }
+  .ourservice-section {
+    margin-top: 2rem;
+  }
+  .food-category-wrapper {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-item {
+    width: 100%;
+    height: 100%;
+  }
+  .food-category h2 {
+    font-size: 2.2rem;
+  }
+  .food-category-wrapper h2 {
+    font-size: 1.2rem;
+  }
+  .food-brand {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .brand-wrapper {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .food-brand h2 {
+    margin-top: 10rem;
+  }
+  .food-brand .food-item {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+  .food-brand .food-item figure {
+    width: 120px;
+    height: 120px;
+  }
+  .ourservice-section .service-items {
+    border-radius: 20px;
+  }
+}
