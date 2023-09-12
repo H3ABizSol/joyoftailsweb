@@ -133,7 +133,7 @@ app.use("/api/razorpay", razorpayRoute);
 app.use("/api/service", serviceRouter);
 app.use("/api/getallstats", getAllStatsRouter);
 
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "./client/build/")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
