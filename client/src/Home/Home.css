@@ -79,7 +79,8 @@
   gap: 6rem;
 }
 .category-item {
-  background-color: rgba(241, 164, 151, 0.981);
+  /* background-color: rgba(241, 164, 151, 0.981); */
+  background-color: #ffde59;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -140,7 +141,8 @@
   border-radius: 50%;
 }
 .service-area {
-  background-color: #f49867d8;
+  /* background-color: #f49867d8; */
+  background-color: #f5dc78;
 }
 .service-section {
   width: 80%;

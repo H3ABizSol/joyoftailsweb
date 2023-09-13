@@ -28,7 +28,7 @@ const happyCustomerRouter = require("./routes/happycustomer");
 dotenv.config();
 const client = require("twilio")(
   process.env.ACCOUNT_SID,
-  process.env.ACe91c26444357af0283fd67f0bfccfeaa
+  process.env.authToken
 );
 
 const app = express();
