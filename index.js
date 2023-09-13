@@ -52,7 +52,7 @@ mongoose
 
 app.post("/phonelogin", (req, res) => {
   client.verify.v2
-    .services("VA871f317334264471f5088479d9d0a46f")
+    .services(process.env.serviceId)
     .verifications.create({ to: `+91${req.body.phone}`, channel: "sms" })
     .then((verification) => {
       console.log(verification);
@@ -61,7 +61,7 @@ app.post("/phonelogin", (req, res) => {
 });
 app.post("/phonelogin/verify", (req, res) => {
   client.verify.v2
-    .services("VA871f317334264471f5088479d9d0a46f")
+    .services(process.env.serviceId)
     .verificationChecks.create({
       to: `+91${req.body.phone}`,
       code: req.body.otp,
