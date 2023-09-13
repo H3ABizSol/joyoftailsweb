@@ -7,22 +7,28 @@ const router = require("express").Router();
 router.post("/create", verifyTokenAndAdmin, async (req, res) => {
   const { title, subcategory, animalType } = req.body;
   console.log(title);
+  console.log(animalType);
   const arrCat = subcategory.split(",");
   try {
     const categoriesExist = await subCategory.findOne({
       title: title.toLowerCase(),
       animalType,
     });
-
+    console.log(categoriesExist);
     if (
-      categoriesExist?.title === title &&
-      categoriesExist?.animalType === animalType
+      categoriesExist?.title === title.toLowerCase() &&
+      categoriesExist?.animalType === animalType.toLowerCase()
     ) {
-      await categoriesExist.updateOne({
-        $push: { subCategories: { $each: arrCat } },
-      });
-      return res.json("success");
+      await subCategory.updateOne(
+        { title, animalType },
+        {
+          $push: { subCategories: { $each: arrCat } },
+        }
+      );
+      console.log("exist");
+      return res.json({ success: true });
     } else {
+      console.log("else");
       const subcategories = await subCategory.create({
         title,
         subCategories: arrCat,

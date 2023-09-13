@@ -25,7 +25,6 @@ export const Coupon = () => {
     );
     if (data.success) {
       setOk(true);
-
       setSpin(false);
     }
   };
@@ -41,6 +40,8 @@ export const Coupon = () => {
       setCoupon({ ...data.coupon });
       setTitle(data.coupon.title);
       setOffer(data.coupon.offer);
+      setSpin(false);
+    } else {
       setSpin(false);
     }
   };

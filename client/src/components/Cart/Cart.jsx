@@ -103,7 +103,7 @@ const Cart = () => {
         },
       });
       console.log(res.data);
-      if (res.data.success) {
+      if (res.data.success && res.data.cart) {
         setCart([...res.data.cart.products]);
         setCartItems2({ ...res.data.cart });
         setCartItems([...res.data.cart.products]);
@@ -146,7 +146,6 @@ const Cart = () => {
     // setCartItems(data);
     CartItemFun();
   };
-  console.log(cartItems2);
   console.log(
     cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
   );

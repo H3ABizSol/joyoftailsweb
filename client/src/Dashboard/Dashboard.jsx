@@ -41,7 +41,6 @@ export const Dashboard = () => {
     subCategories: "",
     color: "",
     stock: "",
-    price: "",
     foodType: "",
     animalType: "",
     gramPerQuantity: "",
@@ -58,6 +57,29 @@ export const Dashboard = () => {
     setSpin(false);
   };
 
+  const getBrands = async () => {
+    const { data } = await axios.get("/api/brand", {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
+    console.log(data);
+    if (data.success) {
+      const url = [];
+      data.brands.map((b) => {
+        b.brand.map((b) => {
+          url.push(b);
+        });
+      });
+      console.log(url);
+      setBrand([...url]);
+      setFormData({
+        ...formdata,
+        brand: url[0].name,
+      });
+    }
+  };
+
   const getCategory = async () => {
     const { data } = await axios.get("/api/category", {
       headers: {
@@ -71,6 +93,7 @@ export const Dashboard = () => {
           return url.push(c);
         });
       });
+      console.log(url);
       setCategory([...url]);
       setFormData({
         ...formdata,
@@ -103,33 +126,11 @@ export const Dashboard = () => {
     }
   };
 
-  const getBrands = async () => {
-    const { data } = await axios.get("/api/brand", {
-      headers: {
-        token: localStorage.getItem("token"),
-      },
-    });
-    console.log(data);
-    if (data.success) {
-      const url = [];
-      data.brands.map((b) => {
-        b.brand.map((b) => {
-          url.push(b);
-        });
-      });
-      setBrand([...url]);
-      setFormData({
-        ...formdata,
-        brand: url[0].name,
-      });
-    }
-  };
-
   useEffect(() => {
-    getProducts();
+    getBrands();
     getCategory();
     getSubCategory();
-    getBrands();
+    getProducts();
   }, [show]);
 
   const handleChange = (e) => {
@@ -153,40 +154,40 @@ export const Dashboard = () => {
     for (let i = 0; i < image.length; i++) {
       formData.append("img", image[i]);
     }
-    // formData.append("title", formdata.title);
-    // formData.append("Stock", formdata.stock);
-    // formData.append("brand", formdata.brand);
-    // formData.append("sizePrice", formdata.sizePrice);
-    // formData.append("animalType", formdata.animalType);
-    // formData.append("foodType", formdata.foodType);
-    // formData.append("gramPerQuantity", formdata.gramPerQuantity);
-    // formData.append("desc", formdata.desc);
-    // formData.append("price", formdata.mrp);
-    // formData.append("categories", formdata.categories);
-    // formData.append("subCategories", formdata.subCategories);
-    // formData.append("color", formdata.color);
-    // formData.append("sellingPrice", formdata.mrp - sellingprice);
-    // formData.append("discount", formdata.discount);
+    formData.append("title", formdata.title);
+    formData.append("Stock", formdata.stock);
+    formData.append("brand", formdata.brand);
+    formData.append("sizePrice", formdata.sizePrice);
+    formData.append("animalType", formdata.animalType);
+    formData.append("foodType", formdata.foodType);
+    formData.append("gramPerQuantity", formdata.gramPerQuantity);
+    formData.append("desc", formdata.desc);
+    formData.append("price", formdata.mrp);
+    formData.append("categories", formdata.categories);
+    formData.append("subCategories", formdata.subCategories);
+    formData.append("color", formdata.color);
+    formData.append("sellingPrice", formdata.mrp - sellingprice);
+    formData.append("discount", formdata.discount);
 
-    // const { data } = await axios.post("/api/product", formData, {
-    //   headers: {
-    //     token: Cookies.get("token"),
-    //   },
-    // });
-    // setFormData({
-    //   brand: "",
-    //   title: "",
-    //   desc: "",
-    //   categories: "",
-    //   color: "",
-    //   stock: "",
-    //   price: "",
-    // });
-    // setOpen(false);
-    // if (data.success) {
-    //   setOK(true);
-    //   alert("Product created Successfully");
-    // }
+    const { data } = await axios.post("/api/product", formData, {
+      headers: {
+        token: Cookies.get("token"),
+      },
+    });
+    setFormData({
+      brand: "",
+      title: "",
+      desc: "",
+      categories: "",
+      color: "",
+      stock: "",
+      price: "",
+    });
+    setOpen(false);
+    if (data.success) {
+      setOK(true);
+      alert("Product created Successfully");
+    }
   };
 
   const deleteProduct = async (id) => {
@@ -268,7 +269,7 @@ export const Dashboard = () => {
       setSubCategory([]);
     }
   };
-
+  console.log(category);
   if (ok) {
     return <Dashboard />;
   }
@@ -294,6 +295,7 @@ export const Dashboard = () => {
                 });
               }}
             >
+              <option value="">Brands</option>
               {brand.length > 0 &&
                 brand.map((e) => {
                   return <option value={e.name}>{e.name}</option>;
@@ -338,6 +340,8 @@ export const Dashboard = () => {
                 });
               }}
             >
+              <option value="">Category</option>
+
               {category &&
                 category.map((c) => {
                   return <option value={c.title}>{c.title}</option>;
@@ -354,6 +358,8 @@ export const Dashboard = () => {
               }}
               value={subCategoryName}
             >
+              <option value="">Sub Category</option>
+
               {subCategory2.length > 0 &&
                 subCategory2.map((c) => {
                   return <option value={c}>{c}</option>;
