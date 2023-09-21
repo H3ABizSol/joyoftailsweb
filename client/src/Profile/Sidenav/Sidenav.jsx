@@ -99,7 +99,7 @@ export const Sidenav = ({ user }) => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
       setTimeout(() => {
@@ -131,7 +131,7 @@ export const Sidenav = ({ user }) => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     } else {
@@ -142,7 +142,7 @@ export const Sidenav = ({ user }) => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     }
