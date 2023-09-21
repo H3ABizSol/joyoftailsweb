@@ -13,15 +13,49 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+
 const Login = () => {
   const [user, setUser] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [spin, setSpin] = useState(false);
+  const [spin2, setSpin2] = useState(false);
+
+  const [phone, setPhone] = useState("");
+  const [otpShow, setOtpShow] = useState(false);
+  const [otp, setOtp] = useState("");
+
+  const sendRequest = async (e) => {
+    setSpin2(true);
+    e.preventDefault();
+    console.log(phone);
+    const { data } = await axios.post("/phonelogin", {
+      phone,
+    });
+    console.log(data);
+    if (data.success) {
+      setOtpShow(true);
+      setSpin2(false);
+    }
+  };
+  const sendOtp = async () => {
+    const { data } = await axios.post("/phonelogin/verify", {
+      otp,
+      phone,
+    });
+    if (data.success) {
+      localStorage.setItem("token", data.accessToken);
+      localStorage.setItem("id", data.user._id);
+      navigate("/");
+    } else {
+      alert("otp is not correct or otp is vanish");
+    }
+  };
 
   const antIcon = (
     <LoadingOutlined
       style={{
-        fontSize: 35,
+        fontSize: 15,
         marginTop: "-2rem",
         color: "white",
       }}
@@ -56,7 +90,6 @@ const Login = () => {
           navigate("/");
         }
       } else {
-        console.log("jelo");
         setSpin(false);
         toast.error(data.message, {
           position: "top-center",
@@ -172,12 +205,59 @@ const Login = () => {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "2rem",
+                  marginTop: "0.5rem",
                 }}
               >
                 <img src={compLogo} alt="" width={40} />
               </div>
             </Link>
+
+            <div className="phone-login">
+              {otpShow ? (
+                <div
+                  className="otp"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                  }}
+                >
+                  <input
+                    type="number"
+                    value={otp}
+                    id=""
+                    placeholder="enter your otp"
+                    onChange={(e) => {
+                      setOtp(e.target.value);
+                    }}
+                  />
+                  <button type="button" onClick={sendOtp}>
+                    verify
+                  </button>
+                </div>
+              ) : (
+                <div className="phone">
+                  <h2>Login with mobile</h2>
+                  <input
+                    type="number"
+                    name=""
+                    id=""
+                    required
+                    placeholder="Mobile"
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                  />
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <button type="button" onClick={sendRequest}>
+                      Request OTP{" "}
+                      {spin2 && <Spin size="10" indicator={antIcon} />}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
 
             <div className="emailPass">
               <div className="email emailPassWrapper">

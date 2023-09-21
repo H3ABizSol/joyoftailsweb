@@ -29,7 +29,7 @@ const ConfirmOrder = ({ history }) => {
     pinCode: data.pinCode,
     landmark: data.landmark,
   });
-  const [user, setUser] = useState({ name: localStorage.getItem("user") });
+  // const [user, setUser] = useState({ name: localStorage.getItem("user") });
   const [cartItems, setCartItems] = useState({
     products: [
       {
@@ -62,9 +62,9 @@ const ConfirmOrder = ({ history }) => {
   };
 
   const cashondelivey = async (total) => {
-    // setSpin(true);
+    setSpin(true);
     const res = await axios.post("/api/order", {
-      name: user.name,
+      name: data.name,
       email: shippingInfo.email,
       phoneNo: shippingInfo.phoneNo,
       amount: Number(total),
@@ -146,7 +146,7 @@ const ConfirmOrder = ({ history }) => {
     );
     console.log(myres);
     await axios.put(`/api/order/${res.data._id}`, {
-      name: user.name,
+      name: data.name,
       email: shippingInfo.email,
       phoneNo: shippingInfo.phoneNo,
       amount: Number(total),
@@ -156,8 +156,8 @@ const ConfirmOrder = ({ history }) => {
       paymentmethod: "COD",
       order_id: myres.data.order_id,
     });
+    setSpin(false);
     // setTimeout(() => {
-    //   setSpin(false);
     //   window.location.replace(`/paymentsuccess?reference=COD`);
     // }, 2000);
   };
@@ -233,7 +233,7 @@ const ConfirmOrder = ({ history }) => {
           razorpay_payment_id: response.razorpay_payment_id,
           razorpay_order_id: response.razorpay_order_id,
           razorpay_signature: response.razorpay_signature,
-          name: user.name,
+          name: data.name,
           email: shippingInfo.email,
           phoneNo: shippingInfo.phoneNo,
           amount: Number(amount),
@@ -316,7 +316,7 @@ const ConfirmOrder = ({ history }) => {
         );
         console.log(myres);
         await axios.put(`/api/order/${res.data._id}`, {
-          name: user.name,
+          name: data.name,
           email: shippingInfo.email,
           phoneNo: shippingInfo.phoneNo,
           amount: Number(amount),
@@ -338,14 +338,14 @@ const ConfirmOrder = ({ history }) => {
         }, 1000);
       },
       prefill: {
-        name: user.name,
+        name: data.name,
         email: shippingInfo.email,
         contact: `${shippingInfo.phoneNo}`,
         products: cartItems.products,
       },
       notes: {
         address: address,
-        name: user.name,
+        name: data.name,
         email: shippingInfo.email,
         phoneNo: shippingInfo.phoneNo,
         amount: shippingInfo.amount,
@@ -369,7 +369,8 @@ const ConfirmOrder = ({ history }) => {
               <div>
                 <p>Name:</p>
                 <span>
-                  {localStorage.getItem("user") && localStorage.getItem("user")}
+                  {/* {localStorage.getItem("user") && localStorage.getItem("user")} */}
+                  {data.name}
                 </span>
               </div>
               <div>

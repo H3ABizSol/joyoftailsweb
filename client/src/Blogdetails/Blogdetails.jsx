@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 export const Blogdetails = () => {
   const param = useParams();
@@ -10,7 +12,20 @@ export const Blogdetails = () => {
   const [blog, setBlogs] = useState({});
   const [userName, setUserName] = useState("");
   const [comments, setComment] = useState("");
+  const [spin, setSpin] = useState(false);
+  const [ok, setOk] = useState(false);
+
   // const [userName , setUserName] = useState("")
+  const antIcon = (
+    <LoadingOutlined
+      style={{
+        fontSize: 18,
+        marginTop: "-2rem",
+        color: "black",
+      }}
+      spin
+    />
+  );
 
   const getBlogs = async () => {
     const { data } = await axios.get(`/api/blog/${param.id}`);
@@ -20,6 +35,7 @@ export const Blogdetails = () => {
   };
 
   const comment = async (e) => {
+    setSpin(true);
     e.preventDefault();
     if (localStorage.getItem("token")) {
       const { data } = await axios.post(
@@ -35,6 +51,12 @@ export const Blogdetails = () => {
           },
         }
       );
+      if (data.success) {
+        setSpin(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
     } else {
       toast.error("you have to login first", {
         position: "top-center",
@@ -66,17 +88,7 @@ export const Blogdetails = () => {
         <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
         <p>{blog.desc}</p>
       </div>
-      <h4>Comments</h4>
-      <div className="user-comment">
-        {blog.comments?.map((c) => {
-          return (
-            <div className="items">
-              <p>{c.name}</p>
-              <p>{c.comment}</p>
-            </div>
-          );
-        })}
-      </div>
+
       <h4>Leave comments</h4>
       <div className="comment">
         <form action="" onSubmit={comment} method="post">
@@ -103,9 +115,23 @@ export const Blogdetails = () => {
             />
           </div>
           <div>
-            <button>Submit</button>
+            <button>Submit {spin && <Spin indicator={antIcon} />}</button>
           </div>
         </form>
+        {blog.comments?.length > 0 && <h4>Comments</h4>}
+
+        {blog.comments?.length > 0 && (
+          <div className="user-comment">
+            {blog.comments?.map((c) => {
+              return (
+                <div className="message-items">
+                  <div className="name">{c.name}</div>
+                  <div className="comment-mess">{c.comment}</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -113,8 +113,8 @@ export const Home = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
-        fontSize: "50px",
+        theme: "dark",
+        fontSize: "80px",
       });
     } else {
       toast.error("you have to login first", {
@@ -125,10 +125,10 @@ export const Home = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
       });
       setTimeout(() => {
-        window.location.href = "/loginphone";
+        window.location.href = "/login";
       }, 500);
     }
   };
@@ -276,7 +276,7 @@ export const Home = () => {
                                     display: "flex",
                                     flexDirection: "column",
                                     alignItems: "start",
-                                    gap: "0.5rem",
+                                    gap: "1rem",
                                   }}
                                 >
                                   {e.subCategories.map((e) => {
@@ -649,30 +649,6 @@ export const Home = () => {
               <h2>Veterinary Care</h2>
             </div>
           </div> */}
-          <div className="whatsapp">
-            <a
-              href="https://wa.me/+917497042180"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.4rem",
-                alignItems: "center",
-              }}
-            >
-              <BsWhatsapp size={50} fill="#25D366" />
-              <span
-                style={{
-                  fontSize: "1rem",
-                  fontWeight: "700",
-                  color: "#5d625e",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.2rem",
-                }}
-              >
-                Chat With Us
-              </span>
-            </a>
-          </div>
         </div>
       </section>
     </>

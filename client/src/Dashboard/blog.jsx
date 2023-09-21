@@ -24,6 +24,8 @@ export const Blog = () => {
   const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e) => {
+    console.log("jel");
+    setSpin(true);
     e.preventDefault();
     const formData = new FormData();
     formData.append("img", img);
@@ -34,9 +36,14 @@ export const Blog = () => {
         token: localStorage.getItem("token"),
       },
     });
+    if (data.success) {
+      setSpin(false);
+      setOk(true);
+    }
   };
 
   const handleSubmitUpdate = async (e) => {
+    setSpin(true);
     e.preventDefault();
     console.log(imgUpdated);
 
@@ -51,6 +58,7 @@ export const Blog = () => {
       },
     });
     if (data.success) {
+      setSpin(false);
       setOk(true);
     }
   };
@@ -62,9 +70,16 @@ export const Blog = () => {
     }
   };
   const deleteBlog = async (b) => {
-    console.log(b);
-    const { data } = await axios.delete(`/api/blog/delete/${b._id}`);
-    console.log(data);
+    const confirm = window.confirm("are you sure");
+    if (confirm) {
+      setSpin(true);
+      const { data } = await axios.delete(`/api/blog/delete/${b._id}`);
+      console.log(data);
+      if (data.success) {
+        setSpin(false);
+        setOk(true);
+      }
+    }
   };
 
   const updateBlog = (b) => {
@@ -82,7 +97,7 @@ export const Blog = () => {
   return (
     <section className="dashboard-section">
       <Modal
-        title="Form"
+        title="UPDATE BLOGS"
         centered
         open={open}
         onOk={() => setOpen(false)}

@@ -52,7 +52,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 52px;
+  font-size: 30px;
   line-height: 82px;
   /* identical to box height */
   color: #000000;
@@ -102,7 +102,7 @@
   color: #000000;
 }
 .emailPass {
-  margin-top: 50px;
+  margin-top: 5px;
 }
 .labelTextWrapper {
   font-family: "Poppins";

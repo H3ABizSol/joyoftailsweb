@@ -31,6 +31,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   const [cart, setCart] = useCart();
   const [isAdmin, setIsAdmin] = useState("");
+  const navigate = useNavigate();
   const handleClick = () => {
     setMenu(!menu);
   };
@@ -212,6 +213,11 @@ export const Header = () => {
                     gap: "1.8rem",
                   }}
                 >
+                  {!localStorage.getItem("token") && (
+                    <li>
+                      <NavLink to="/register">Register</NavLink>
+                    </li>
+                  )}
                   {localStorage.getItem("token") ? (
                     <li>
                       <Link to="/profile">My Profile</Link>
@@ -222,11 +228,6 @@ export const Header = () => {
                     </li>
                   )}
 
-                  {!localStorage.getItem("token") && (
-                    <li>
-                      <NavLink to="/register">Register</NavLink>
-                    </li>
-                  )}
                   {localStorage.getItem("token") && (
                     <li>
                       <Link to="/userorder">My Orders</Link>
@@ -241,6 +242,7 @@ export const Header = () => {
                           localStorage.removeItem("token");
                           localStorage.removeItem("id");
                           localStorage.removeItem("user");
+                          localStorage.removeItem("isAdmin");
                         }}
                       >
                         Logout
@@ -378,26 +380,16 @@ export const Header = () => {
                 </li>
               )}
 
-              {!localStorage.getItem("token") && (
+              {localStorage.getItem("token") && (
                 <li
                   onClick={() => {
-                    setMenu(true);
+                    // console.log("helo");
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("isAdmin");
+                    navigate("/register");
                   }}
                 >
-                  <NavLink to="/register">Register</NavLink>
-                </li>
-              )}
-              {localStorage.getItem("token") && (
-                <li>
-                  <NavLink
-                    to="/register"
-                    onClick={() => {
-                      localStorage.removeItem("token");
-                      // dispatch(false);
-                    }}
-                  >
-                    logout
-                  </NavLink>
+                  logout
                 </li>
               )}
             </ul>

@@ -11,6 +11,7 @@ export const Service = () => {
   const [image, setImage] = useState("");
   const [service, setService] = useState("");
   const [spin, setSpin] = useState(false);
+  const [ok, setOk] = useState(false);
 
   const [userInfo, setUserInfo] = useState({
     title: "",
@@ -40,6 +41,7 @@ export const Service = () => {
       },
     });
     setSpin(false);
+    setOk(true);
   };
 
   const getService = async () => {
@@ -54,17 +56,25 @@ export const Service = () => {
   };
 
   const deleteService = async (id) => {
+    setSpin(true);
     const { data } = await axios.delete(`/api/service/delete/${id}`, {
       headers: {
         token: localStorage.getItem("token"),
       },
     });
-    console.log(data);
+    if (data.success) {
+      setSpin(false);
+      setOk(true);
+    }
   };
 
   useEffect(() => {
     getService();
   }, []);
+
+  if (ok) {
+    return <Service />;
+  }
 
   return (
     <section className="dashboard-section">

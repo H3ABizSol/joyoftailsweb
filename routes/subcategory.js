@@ -56,7 +56,7 @@ router.delete("/delete/:id", verifyTokenAndAdmin, async (req, res) => {
     }
   );
 
-  // res.status(200).json({ success: true, message: "Delete Successfully" });
+  res.status(200).json({ success: true, message: "Delete Successfully" });
 });
 
 module.exports = router;

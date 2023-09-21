@@ -70,7 +70,7 @@ export const Productdetails = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     }
@@ -124,7 +124,7 @@ export const Productdetails = () => {
           closeOnClick: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
           fontSize: "50px",
         });
       }
@@ -136,7 +136,7 @@ export const Productdetails = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     }

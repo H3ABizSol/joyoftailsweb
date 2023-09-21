@@ -12,8 +12,13 @@ export const Privateroute = () => {
         id: localStorage.getItem("id"),
       },
     });
+    console.log(data);
     if (data.success) {
-      setOk(true);
+      if (data.user.isAdmin) {
+        setOk(true);
+      } else {
+        navigate("/login");
+      }
     } else {
       navigate("/login");
     }

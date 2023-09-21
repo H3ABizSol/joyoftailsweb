@@ -15,6 +15,7 @@ export const Persional = () => {
     );
     setUser({ ...data.others });
   };
+  console.log(user);
   useEffect(() => {
     getUser();
   }, []);
@@ -22,16 +23,15 @@ export const Persional = () => {
     <ProfileLayout>
       <div className="profile-content">
         <h2>Persional Information</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, nobis
-          ab error totam deleniti nam odit tempora hic voluptates rem?
-          Temporibus illo voluptatibus voluptates eveniet sapiente quidem
-          assumenda natus iste.
-        </p>
+        <p></p>
         <ul>
-          <li>{user.username}</li>
+          <li> {user.username}</li>
           <li>{user.email}</li>
         </ul>
+        <p>Mobile :{user.phoneNumber}</p>
+        <p>Address :{user.address}</p>
+        <p>Gender :{user.gender}</p>
+        <p>DOB :{user.dob}</p>
       </div>
     </ProfileLayout>
   );

@@ -19,15 +19,25 @@ router.put(
   async (req, res) => {
     const { ...others } = req.body;
     const { oldpassword, newpassword } = req.body;
+    console.log(req.body);
     try {
       const data = await phone.findById(req.params.id);
       if (data) {
+        if (req.file) {
+          const user = await phone.findByIdAndUpdate(
+            req.params.id,
+            { ...req.body, image: req.file.filename },
+            {
+              new: true,
+            }
+          );
+          return res.status(200).json({ success: true });
+        }
         const others = await phone.findByIdAndUpdate(
           req.params.id,
           {
             $set: {
-              username: req.body.username,
-              email: req.body.email,
+              ...req.body,
             },
           },
           { new: true }
@@ -35,6 +45,7 @@ router.put(
         return res.json({ success: true, others });
       }
       if (oldpassword) {
+        console.log("helo");
         const userExist = await User.findById(req.params.id).select(
           "+password"
         );
@@ -57,7 +68,6 @@ router.put(
       }
 
       if (req.file) {
-        console.log("helo");
         const user = await User.findByIdAndUpdate(
           req.params.id,
           { ...others, image: req.file.filename },
@@ -69,7 +79,11 @@ router.put(
       } else {
         const user = await User.findByIdAndUpdate(
           req.params.id,
-          { ...others },
+          {
+            $set: {
+              ...others,
+            },
+          },
           {
             new: true,
           }

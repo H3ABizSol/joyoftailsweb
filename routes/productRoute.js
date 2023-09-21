@@ -77,24 +77,59 @@ router.put(
   verifyTokenAndAdmin,
   multipleUpload.array("img"),
   async (req, res, next) => {
-    console.log(req.body);
     try {
-      const product = await Product.findByIdAndUpdate(
-        req.params.id,
-        {
-          ...req.body,
-          categories: {
-            category: req.body.categories,
-            subCategory: req.body.subCategories,
-            animalType: req.body.animalType,
-          },
-        },
-        {
-          new: true,
+      console.log(req.body);
+      const gramArr = req.body.gramPerQuantity.split(",");
+      const gramPriceArr = req.body.sizePrice.split(",");
+      let gramPerQuantitys = [];
+      gramArr.map((i, index) => {
+        const ob = {
+          size: i,
+          price: gramPriceArr[index],
+        };
+        gramPerQuantitys.push(ob);
+      });
+
+      if (req.file) {
+        let url = [];
+        const files = req.files;
+
+        for (const file of files) {
+          const { filename } = file;
+          url.push(filename);
         }
-      );
-      const updateProduct = await product.save();
-      return res.status(200).json({ success: true, updateProduct });
+        const Create = await Product.findByIdAndUpdate(req.params.id, {
+          ...req.body,
+          img: url,
+          categories: {
+            category: categories,
+            subCategory: subCategories,
+            animalType: animalType,
+          },
+          gramPerQuantity: gramPerQuantitys,
+        });
+
+        await Create.save();
+        return res.status(200).json({ Create, success: true });
+      } else {
+        const product = await Product.findByIdAndUpdate(
+          req.params.id,
+          {
+            ...req.body,
+            categories: {
+              category: req.body.categories,
+              subCategory: req.body.subCategories,
+              animalType: req.body.animalType,
+            },
+            gramPerQuantity: gramPerQuantitys,
+          },
+          {
+            new: true,
+          }
+        );
+        const updateProduct = await product.save();
+        return res.status(200).json({ success: true, updateProduct });
+      }
     } catch (err) {
       return res.status(500).json({ err: err.message });
     }
@@ -122,7 +157,6 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res, next) => {
 router.get("/find/:id", async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.id);
-    console.log(product);
     return res.status(200).json({ success: true, productDetails: product });
   } catch (err) {
     return res.status(500).json(err);

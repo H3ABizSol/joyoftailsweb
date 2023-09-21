@@ -31,7 +31,7 @@
   display: none;
 }
 .category-section ul li .sub-menu p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-transform: capitalize;
   padding: 0.6rem 0;
 }
@@ -39,19 +39,18 @@
 .category-section ul li:hover > .sub-menu {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   gap: 2rem;
   padding: 2rem 1rem;
   position: absolute;
   height: 250px;
   width: 100%;
-  top: 70%;
+  top: 80%;
   z-index: 9999;
   left: 0;
   background-color: rgb(251, 252, 251);
   animation: subanim 0.8s forwards;
 }
-
 @keyframes subanim {
   0% {
     margin-top: -4rem;
@@ -487,6 +486,9 @@
     font-size: 1rem;
     text-transform: capitalize;
     padding: 0.6rem 0;
+  }
+  .category-section ul li:hover > .sub-menu {
+    font-size: 1rem;
   }
 
   .food-section {

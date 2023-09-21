@@ -121,6 +121,16 @@
   background-color: rgb(238, 235, 235);
   border-radius: 5px;
 }
+.form-wrapper input[type="radio"] {
+  width: fit-content;
+}
+
+.form-wrapper .gender {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 1rem;
+}
+
 .form-wrapper textarea {
   width: 100%;
   padding: 1.2rem 1.5rem;

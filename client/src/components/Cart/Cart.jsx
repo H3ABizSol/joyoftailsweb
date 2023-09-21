@@ -56,7 +56,7 @@ const Cart = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     }
@@ -139,7 +139,7 @@ const Cart = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
     }

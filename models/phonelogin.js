@@ -12,6 +12,18 @@ const phoneLoginSchema = mongoose.Schema(
     mobile: {
       type: String,
     },
+    dob: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
     image: {
       type: String,
       default:

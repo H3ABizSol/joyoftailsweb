@@ -12,7 +12,11 @@ export const Ourservice = () => {
   const params = useParams();
   const [serviceDetails, setServiceDetails] = useState([]);
   const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+
   const [id, setId] = useState("");
   const [ok, setOk] = useState(false);
 
@@ -32,6 +36,7 @@ export const Ourservice = () => {
         {
           user: localStorage.getItem("id"),
           rating,
+          comment,
           name: localStorage.getItem("user"),
         },
         {
@@ -102,6 +107,48 @@ export const Ourservice = () => {
                     initialValue={e.ratings}
                     allowFraction={true}
                   />{" "}
+                  {/* {e.reviews.map((c) => {
+                    return (
+                      <p style={{ textTransform: "lowercase" }}>{c.comment}</p>
+                    );
+                  })} */}
+                  <p>{e.reviews.length} comments</p>
+                  <span
+                    onClick={() => {
+                      setOpen2(true);
+                    }}
+                  >
+                    See All
+                  </span>
+                  <Modal
+                    title="How was the service"
+                    centered
+                    open={open2}
+                    onCancel={() => setOpen2(false)}
+                    footer={null}
+                  >
+                    <div>
+                      {e.reviews.map((c) => {
+                        return (
+                          <p
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "0.2rem",
+                              alignContent: "center",
+                            }}
+                          >
+                            {c.name}
+                            <span
+                              style={{ fontSize: "1rem", fontWeight: "400" }}
+                            >
+                              {c.comment}
+                            </span>
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </Modal>
                   <div>
                     <button
                       style={{
@@ -125,7 +172,7 @@ export const Ourservice = () => {
             })}
         </div>
         <Modal
-          title="Form"
+          title="How was the service"
           centered
           open={open}
           onCancel={() => setOpen(false)}
@@ -141,7 +188,7 @@ export const Ourservice = () => {
               allowFraction={true}
             />
             <div>
-              {/* <textarea
+              <textarea
                 name="comment"
                 placeholder="comment"
                 value={comment}
@@ -149,7 +196,7 @@ export const Ourservice = () => {
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
-              /> */}
+              />
             </div>
             <div>
               <button className="modal-btn">Submit Review</button>

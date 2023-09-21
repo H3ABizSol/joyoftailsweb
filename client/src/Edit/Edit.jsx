@@ -49,7 +49,9 @@ export const Edit = () => {
       namearr.push(e.size);
       pricearr.push(e.price);
     });
+    console.log(pricearr);
     const size = namearr.toString();
+    const priceSize = pricearr.toString();
     setFormData({
       brand: data.productDetails.brand,
       title: data.productDetails.title,
@@ -58,7 +60,7 @@ export const Edit = () => {
       subCategories: data.productDetails.categories.subCategory,
       color: data.productDetails.color,
       stock: data.productDetails.Stock,
-      price: data.productDetails.price,
+      price: priceSize,
       foodType: data.productDetails.foodType,
       animalType: data.productDetails.animalType,
       gramPerQuantity: size,
@@ -86,6 +88,8 @@ export const Edit = () => {
     formData.append("gramPerQuantity", formdata.gramPerQuantity);
     formData.append("desc", formdata.desc);
     formData.append("price", formdata.mrp);
+    formData.append("sizePrice", formdata.price);
+
     formData.append("categories", formdata.categories);
     formData.append("subCategories", formdata.subCategories);
     formData.append("color", formdata.color);
@@ -97,6 +101,7 @@ export const Edit = () => {
         token: Cookies.get("token"),
       },
     });
+    console.log(data);
     setOpen(false);
     if (data.success) {
       setSpin(false);
@@ -294,6 +299,13 @@ export const Edit = () => {
                     return <option value={c}>{c}</option>;
                   })} */}
               </select>
+              <input
+                type="text"
+                name="color"
+                placeholder="product color"
+                onChange={handleChange}
+                value={formdata.color}
+              />
             </div>
 
             <div>
@@ -310,17 +322,18 @@ export const Edit = () => {
               <input
                 type="text"
                 name="gramPerQuantity"
-                placeholder="gramperquantity"
+                placeholder="sizes in gram,cm etc "
                 onChange={handleChange}
                 value={formdata.gramPerQuantity}
               />
-              {/* <input
-                  type="text"
-                  name=""
-                  id=""
-                  style={{ width: "30%" }}
-                  placeholder="price"
-                /> */}
+              <input
+                type="text"
+                name="sizePrice"
+                id=""
+                placeholder="price of sizes"
+                onChange={handleChange}
+                value={formdata.price}
+              />
 
               <input
                 type="text"
@@ -328,15 +341,6 @@ export const Edit = () => {
                 placeholder="food type"
                 onChange={handleChange}
                 value={formdata.foodType}
-              />
-              <input
-                type="file"
-                multiple
-                name="img"
-                placeholder="product image"
-                onChange={(e) => {
-                  setImage(e.target.files);
-                }}
               />
 
               {/* <button
@@ -377,6 +381,15 @@ export const Edit = () => {
 
             <div className="form-content">
               <input
+                type="file"
+                multiple
+                name="img"
+                placeholder="product image"
+                onChange={(e) => {
+                  setImage(e.target.files);
+                }}
+              />
+              <input
                 type="text"
                 name="stock"
                 placeholder="product stock"
@@ -389,13 +402,6 @@ export const Edit = () => {
                 placeholder="product price in MRP"
                 onChange={handleChange}
                 value={formdata.mrp}
-              />
-              <input
-                type="text"
-                name="color"
-                placeholder="product color"
-                onChange={handleChange}
-                value={formdata.color}
               />
             </div>
             <div className="form-content">

@@ -57,6 +57,9 @@ app.post("/phonelogin", (req, res) => {
     .then((verification) => {
       console.log(verification);
       res.json({ success: true, verification });
+    })
+    .catch((err) => {
+      res.json({ err });
     });
 });
 app.post("/phonelogin/verify", (req, res) => {
@@ -67,48 +70,54 @@ app.post("/phonelogin/verify", (req, res) => {
       code: req.body.otp,
     })
     .then(async (verification_check) => {
-      console.log(verification_check);
-      const isExist = await phone.findOne({
-        mobile: req.body.phone,
-      });
-      if (isExist) {
-        const accessToken = await jwt.sign(
-          {
-            id: isExist._id,
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: "3d" }
-        );
-        return res.json({
-          success: true,
-          verification_check,
-          accessToken,
-          user: isExist,
-        });
+      if (verification_check.valid) {
+        const isExist = await phone
+          .findOne({
+            mobile: req.body.phone,
+          })
+          .catch((err) => {
+            res.json({ err });
+          });
+        if (isExist) {
+          const accessToken = await jwt.sign(
+            {
+              id: isExist._id,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "3d" }
+          );
+          return res.json({
+            success: true,
+            verification_check,
+            accessToken,
+            user: isExist,
+          });
+        } else {
+          const others = await phone.create({
+            mobile: req.body.phone,
+          });
+          console.log(others);
+          const accessToken = await jwt.sign(
+            {
+              id: others._id,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "3d" }
+          );
+          return res.json({
+            success: true,
+            verification_check,
+            accessToken,
+            user: others,
+          });
+        }
       } else {
-        const others = await phone.create({
-          mobile: req.body.phone,
-        });
-        console.log(others);
-        const accessToken = await jwt.sign(
-          {
-            id: others._id,
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: "3d" }
-        );
-        return res.json({
-          success: true,
-          verification_check,
-          accessToken,
-          user: others,
-        });
+        res.json({ success: false });
       }
     })
     // await phone.create({
     //   mobile: req.body.phone,
     // })
-
     .catch((err) => {
       res.json({ success: false, err });
     });

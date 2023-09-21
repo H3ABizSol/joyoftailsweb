@@ -132,7 +132,7 @@ export const Products = () => {
           closeOnClick: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
           fontSize: "50px",
         });
         if (cart) {
@@ -152,12 +152,12 @@ export const Products = () => {
         closeOnClick: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         fontSize: "50px",
       });
       setTimeout(() => {
-        navigate("/loginphone");
-      }, 500);
+        navigate("/login");
+      }, 2000);
     }
   };
   const getCategories = async function () {

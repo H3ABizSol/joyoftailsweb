@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Loginphone.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -16,6 +15,7 @@ export const Loginphone = () => {
     const { data } = await axios.post("/phonelogin", {
       phone,
     });
+    console.log(data);
     if (data.success) {
       setOtpShow(true);
     }
@@ -28,8 +28,9 @@ export const Loginphone = () => {
     if (data.success) {
       localStorage.setItem("token", data.accessToken);
       localStorage.setItem("id", data.user._id);
-
       navigate("/");
+    } else {
+      alert("otp is not correct or otp is vanish");
     }
   };
   return (

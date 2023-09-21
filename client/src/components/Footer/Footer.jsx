@@ -5,7 +5,7 @@ import {
   IoShieldCheckmarkOutline,
 } from "react-icons/io5";
 import { TbTruckReturn } from "react-icons/tb";
-import { BsRocketTakeoff } from "react-icons/bs";
+import { BsRocketTakeoff, BsWhatsapp } from "react-icons/bs";
 import { SlSupport } from "react-icons/sl";
 import {
   AiFillApple,
@@ -14,6 +14,7 @@ import {
   AiFillFacebook,
   AiFillYoutube,
 } from "react-icons/ai";
+
 export const Footer = () => {
   return (
     <footer>
@@ -215,6 +216,30 @@ export const Footer = () => {
             }}
           />
         </div>
+      </div>
+      <div className="whatsapp">
+        <a
+          href="https://wa.me/+917497042180"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.4rem",
+            alignItems: "center",
+          }}
+        >
+          <BsWhatsapp size={50} fill="#25D366" />
+          <span
+            style={{
+              fontSize: "1rem",
+              fontWeight: "700",
+              color: "#5d625e",
+              textTransform: "uppercase",
+              letterSpacing: "0.2rem",
+            }}
+          >
+            Chat With Us
+          </span>
+        </a>
       </div>
     </footer>
   );

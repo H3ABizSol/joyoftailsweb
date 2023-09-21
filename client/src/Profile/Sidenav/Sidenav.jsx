@@ -11,6 +11,10 @@ export const Sidenav = ({ user }) => {
   const [formdata, setFormData] = useState({
     name: user.username,
     email: user.email,
+    gender: user.gender,
+    phone: user.phoneNumber,
+    dob: user.dob,
+    address: user.address,
   });
   const upload = useRef();
 
@@ -23,13 +27,12 @@ export const Sidenav = ({ user }) => {
         },
       }
     );
-    console.log(data);
     if (data) {
-      setUserInfo({ ...data });
+      setUserInfo({ ...data.others });
       setFormData({
         ...formdata,
-        username: data.username,
-        email: data.email,
+        username: data.others.username,
+        email: data.others.email,
       });
       setImage(data.image);
     }
@@ -64,6 +67,11 @@ export const Sidenav = ({ user }) => {
     const formData = new FormData();
     formData.append("username", formdata.username);
     formData.append("email", formdata.email);
+    formData.append("address", formdata.address);
+    formData.append("phoneNumber", formdata.phone);
+    formData.append("dob", formdata.dob);
+    formData.append("gender", formdata.gender);
+
     formData.append("img", image);
 
     const { data } = await axios.put(
@@ -143,10 +151,11 @@ export const Sidenav = ({ user }) => {
   useEffect(() => {
     getUserInfo();
   }, []);
+  console.log(user);
   return (
     <>
       <Modal
-        title="Form"
+        title="EDIT PROFILE"
         centered
         open={open}
         onOk={() => setOpen(false)}
@@ -171,7 +180,61 @@ export const Sidenav = ({ user }) => {
               value={formdata.email}
             />
           </div>
-
+          <div>
+            <input
+              type="text"
+              name="address"
+              placeholder="enter your address"
+              onChange={handleChange}
+              value={formdata.address}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="phone"
+              placeholder="enter your mobile"
+              onChange={handleChange}
+              value={formdata.phone}
+            />
+          </div>
+          <div>
+            <p style={{ marginLeft: "1rem" }}>Date of Birth</p>
+            <input
+              type="date"
+              name="dob"
+              placeholder="enter your mail"
+              onChange={handleChange}
+              value={formdata.dob}
+            />
+          </div>
+          <div className="gender">
+            <p>Male</p>
+            <input
+              type="radio"
+              name="gender"
+              style={{ padding: "0" }}
+              value="male"
+              onChange={(e) => {
+                setFormData({
+                  ...formdata,
+                  gender: e.target.value,
+                });
+              }}
+            />
+            <p>Female</p>
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              onChange={(e) => {
+                setFormData({
+                  ...formdata,
+                  gender: e.target.value,
+                });
+              }}
+            />
+          </div>
           <div>
             <input
               type="file"
@@ -183,7 +246,6 @@ export const Sidenav = ({ user }) => {
               }}
             />
           </div>
-
           <div>
             <button className="modal-btn">Submit</button>
           </div>
@@ -191,7 +253,7 @@ export const Sidenav = ({ user }) => {
       </Modal>
 
       <Modal
-        title="Form"
+        title="UPDATE PASSWORD"
         centered
         open={open2}
         onOk={() => setOpen2(false)}

@@ -26,6 +26,9 @@ const serviceSchema = new mongoose.Schema(
         rating: {
           type: Number,
         },
+        comment: {
+          type: String,
+        },
       },
     ],
   },

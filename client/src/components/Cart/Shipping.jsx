@@ -29,6 +29,8 @@ const Shipping = () => {
   const [country, setCountry] = useState("");
   const [pinCode, setPinCode] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
+  const [name, setName] = useState("");
+
   console.log(state);
   // const history = useHistory();
   const location = useLocation();
@@ -36,6 +38,7 @@ const Shipping = () => {
     e.preventDefault();
     dispatch(
       AddShipping({
+        name,
         address,
         city,
         state,
@@ -72,6 +75,16 @@ const Shipping = () => {
             encType="multipart/form-data"
             onSubmit={shippingSubmit}
           >
+            <div>
+              {/* <HomeIcon /> */}
+              <input
+                type="text"
+                placeholder="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
             <div>
               {/* <HomeIcon /> */}
               <input

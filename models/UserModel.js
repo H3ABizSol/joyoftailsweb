@@ -33,6 +33,18 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    dob: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
     resetPasswordToken: String,
     resetPasswordExpire: Date,
   },
