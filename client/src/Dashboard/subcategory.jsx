@@ -45,7 +45,7 @@ export const SubCategory = () => {
           closeOnClick: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
           fontSize: "50px",
         });
         setTimeout(() => {
@@ -203,7 +203,7 @@ const ChangeDivSection = ({ data }) => {
           closeOnClick: true,
           draggable: true,
           progress: undefined,
-          theme: "light",
+          theme: "dark",
           fontSize: "50px",
         });
         setTimeout(() => {

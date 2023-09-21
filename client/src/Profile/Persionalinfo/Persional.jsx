@@ -28,10 +28,10 @@ export const Persional = () => {
           <li> {user.username}</li>
           <li>{user.email}</li>
         </ul>
-        <p>Mobile :{user.phoneNumber}</p>
-        <p>Address :{user.address}</p>
-        <p>Gender :{user.gender}</p>
-        <p>DOB :{user.dob}</p>
+        {user.phoneNumber && <p>Mobile :{user.phoneNumber}</p>}
+        {user.address && <p>Address :{user.address}</p>}
+        {user.gender && <p>Gender :{user.gender}</p>}
+        {user.dob && <p>DOB :{user.dob}</p>}
       </div>
     </ProfileLayout>
   );
