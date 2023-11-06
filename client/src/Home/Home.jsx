@@ -303,7 +303,6 @@ export const Home = () => {
             })}
         </ul>
       </section>
-
       <section
         style={{
           width: "95%",
