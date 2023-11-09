@@ -169,7 +169,7 @@ export const Header = () => {
               ? searchData.map((item) => {
                   return (
                     <li
-                      style={{ fontSize: "1.6rem", color: "gray" }}
+                      style={{ color: "gray" }}
                       onClick={() => {
                         setShow(false);
                       }}

@@ -180,6 +180,7 @@ header {
   cursor: pointer;
   padding: 1rem 0.8rem;
   border-radius: 4px;
+  font-size: 1.6rem;
 }
 .searchData li:hover {
   background-color: rgb(226, 222, 222);
@@ -292,5 +293,8 @@ header {
     left: 2%;
     top: 95%;
     border-radius: 4px;
+  }
+  .searchData li {
+    font-size: 1.2rem;
   }
 }
