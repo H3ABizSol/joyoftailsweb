@@ -38,7 +38,7 @@
 .order-details-wrapper .order-status {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 1rem 0;
+  padding: 1rem 0.8rem;
   box-shadow: 0 0 15px rgb(218, 217, 215);
 }
 .order-details-wrapper .order-status h4 {
@@ -64,6 +64,9 @@
   .order-details-wrapper .order-status img {
     width: 120px;
     height: 120px;
+  }
+  .order-details-wrapper {
+    width: 95%;
   }
   .order-details-wrapper .order-status {
     display: flex;
