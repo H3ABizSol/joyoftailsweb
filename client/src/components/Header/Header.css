@@ -1,13 +1,17 @@
 header {
   background-color: tomato;
-  font-family: "Lato";
+  background-color: #d39e69;
+  background: linear-gradient(100deg, #eb7b5b, tomato, rgb(244, 131, 93));
+  font-family: "poppins";
   position: relative;
 }
 
 /* contactDesign */
 
 .contact-wrapper {
-  background-color: #f9e11e;
+  /* background-color: #f9e11e;
+  background-color: #e8c658; */
+  background: linear-gradient(90deg, #f9d765, rgb(224, 216, 97));
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -84,7 +88,8 @@ header {
   border-radius: 5px 0 0 5px;
 }
 .nav-bar .middle-nav-section .nav-bar-search .search {
-  background-color: #89bad0;
+  background-color: rgb(244, 183, 142);
+  /* background-color: rgb(187, 205, 151); */
   height: 38px;
   padding: 0 0.6rem;
   font-size: 2.6rem;
@@ -128,6 +133,11 @@ header {
 .nav-bar .right-nav-section .nav-icons .icons {
   font-size: 2.5rem;
 }
+.nav-bar .right-nav-section .nav-icons li {
+  font-family: "poppins";
+  font-size: 1.7rem;
+  font-weight: 500;
+}
 .nav-bar .right-nav-section .nav-icons .account .sub-menu-account {
   display: none;
 }
@@ -140,11 +150,11 @@ header {
   border-radius: 4px;
   /* border: 1px solid rgb(180, 179, 179); */
   top: 90.5%;
-  left: 60%;
+  left: 75%;
   width: 120px;
   text-transform: capitalize;
   background-color: rgba(255, 255, 255, 0.985);
-  box-shadow: 0 0 2px rgb(160, 160, 159);
+  /* background-color: #f4bc6d; */
   z-index: 99;
   padding: 2rem 0.4rem;
 }

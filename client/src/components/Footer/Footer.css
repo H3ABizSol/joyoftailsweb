@@ -1,8 +1,10 @@
 footer {
   width: 100vw;
   background-color: rgb(25, 24, 36);
+  /* background-color: rgb(32, 41, 46); */
+
   color: var(--white);
-  margin-top: 10rem;
+  margin-top: 1rem;
   padding: 2.8rem 0.8rem;
 }
 

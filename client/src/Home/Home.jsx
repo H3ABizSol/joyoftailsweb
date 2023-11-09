@@ -283,7 +283,7 @@ export const Home = () => {
                                     return (
                                       <li
                                         style={{
-                                          fontSize: "1.6rem",
+                                          fontSize: "1.5rem",
                                           textTransform: "capitalize",
                                         }}
                                       >
@@ -305,7 +305,7 @@ export const Home = () => {
       </section>
       <section
         style={{
-          width: "95%",
+          width: "98%",
           margin: "auto",
         }}
       >
@@ -318,7 +318,7 @@ export const Home = () => {
         />
       </section>
 
-      <section>
+      <section className="food-category-section">
         <div className="food-category">
           <h2>Popular Categories</h2>
 
@@ -329,14 +329,14 @@ export const Home = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 5 }}
+                    transition={{ duration: 2 }}
                     viewport={{
                       once: true,
                     }}
                     className="category-item"
                   >
                     <Link to={`products/${e.name}`}>
-                      <h2>{e.name}</h2>
+                      <h3>{e.name}</h3>
                       <figure>
                         <img src={`/uploads/${e.img}`} alt="" />
                       </figure>
@@ -348,8 +348,8 @@ export const Home = () => {
         </div>
       </section>
 
-      <section>
-        <div className="food-category food-brand">
+      <section className="food-brand-section">
+        <div className=" food-brand">
           <h2>Popular Brands</h2>
 
           <div className="food-category-wrapper brand-wrapper">
@@ -363,10 +363,10 @@ export const Home = () => {
                     viewport={{
                       once: true,
                     }}
-                    className="category-item food-item"
+                    className="food-item"
                   >
                     <Link to={`products/${e.name}`}>
-                      <h2>{e.name}</h2>
+                      <h3>{e.name}</h3>
                       <div>
                         <figure>
                           <img src={`/uploads/${e.img}`} alt="" />
@@ -444,7 +444,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section className="dog-cat-section">
         <div className="icon-wrapper">
           <Link
             to="/products/dog"
@@ -498,7 +498,8 @@ export const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section className="projects-section">
+        <h2>Our Products</h2>
         {spin ? (
           <Loader />
         ) : (
@@ -520,7 +521,7 @@ export const Home = () => {
                           />
                         </figure>
                       </div>
-                      <h2>{product.title}</h2>
+                      <h3>{product.title}</h3>
                     </Link>
                     <div style={{ textAlign: "center", marginTop: "0.4rem" }}>
                       <p>
@@ -571,10 +572,10 @@ export const Home = () => {
         )}
       </section>
 
-      <section>
+      <section className="sleeping-dog-section">
         <div className="sleeping-dog"></div>
       </section>
-      <section>
+      <section className="customer-container">
         <CustomerCarousel
           data={customerDetails}
           customerImages={customerImg}
@@ -583,7 +584,7 @@ export const Home = () => {
         />
       </section>
 
-      <section>
+      <section className="discount-section">
         <div className="discount">
           <div className="discount-item">
             <h2>{coupon?.offer}%</h2>
@@ -610,9 +611,9 @@ export const Home = () => {
                       <figure>
                         <img src={`/uploads/${item.image}`} />
                       </figure>
-                      <h2 style={{ textTransform: "capitalize" }}>
+                      <h3 style={{ textTransform: "capitalize" }}>
                         {item.title}
-                      </h2>
+                      </h3>
                     </div>
                   </div>
                 </Link>

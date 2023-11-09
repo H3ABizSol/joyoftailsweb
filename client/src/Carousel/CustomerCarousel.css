@@ -1,7 +1,6 @@
 .mycarousel {
   width: 80%;
   margin: auto;
-  margin-top: 5rem;
   padding: 8rem 0;
 }
 
@@ -9,7 +8,7 @@
   width: 75%;
   display: flex;
   align-items: center;
-  gap: 6rem;
+  gap: 12rem;
   justify-content: space-evenly;
 }
 .customer-wrapper .figure {
@@ -21,6 +20,8 @@
 .customer-wrapper figure img {
   width: 420px;
   height: 420px;
+  border: 3px solid rgb(114, 35, 167);
+  padding: 0.5rem;
   border-radius: 50%;
 }
 .customer-content {
@@ -35,14 +36,16 @@
 }
 .customer-content h3 {
   font-size: 2.6rem;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 868px) {
   .customer-wrapper {
     flex-direction: column;
+    gap: 5rem;
   }
   .customer-wrapper figure img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 }

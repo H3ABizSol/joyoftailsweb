@@ -53,7 +53,7 @@ export const CustomerCarousel = ({ data, arrows, dots, customerImages }) => {
                 <h2 style={{ fontSize: "4.5rem", lineHeight: "7rem" }}>
                   Views Of Our Happy Customers
                 </h2>
-                <img src={`/uploads/${d.productImg}`} alt="" width={60} />
+                <img src={`/uploads/${d.productImg}`} alt="" width={80} />
                 <p>{d.productName}</p>
                 <p>Comment :{d.comment[0]}</p>
                 <Rating

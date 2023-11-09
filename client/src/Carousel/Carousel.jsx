@@ -44,7 +44,7 @@ export const MyCarousel = ({
         infinite={true}
         arrows={arrow}
         autoPlay={true}
-        autoPlaySpeed={6000}
+        autoPlaySpeed={3000}
         className="carousel"
       >
         {images.length > 0 &&
